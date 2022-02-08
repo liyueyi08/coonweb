@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+
+{% block main %}
+<h1>Leave A Note for Coon</h1>
+<form action="/noteboard" method="POST">
+  {{ form.csrf_token() }}
+  {{ form.title.label }}
+  {{ form.title }}
+  {{ form.submit }}
+
+</form>
+{% if title %}
+    <p>{{title}}</p>
+{% endif %}
+
+{% endblock main %}
